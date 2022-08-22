@@ -4,6 +4,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+/**
+ * struct print_ch - a struct to select functions
+ * @c: the format character
+ * @ptr: pointer to functions
+ */
+
 typedef struct print_ch
 {
 	char *c;

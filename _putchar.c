@@ -36,7 +36,7 @@ int print_str(va_list str)
 {
 	unsigned int i = 0;
 	char *s = va_arg(str, char *);
-	
+
 	while (s[i])
 	{
 		_putchar(s[i]);

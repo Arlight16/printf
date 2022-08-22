@@ -2,7 +2,7 @@
 
 /**
  * _printf - custom  prinf
- * @format: a string 
+ * @format: a string
  *
  * Return: number of characters printed
  * Description: a custom replica of the std printf
@@ -11,8 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list arguments;
-	int i = 0;
-	int char_count = 0;
+	int i = 0, char_count = 0;
 	int (*ptr_func)(va_list);
 
 	if (!format)
@@ -24,16 +23,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i+1] == ' ')
+			if (format[i + 1] == ' ')
 				return (-1);
 
-			ptr_func = select_function(&format[i+1]);
+			ptr_func = select_function(&format[i + 1]);
 		}
 		if (ptr_func != NULL)
 		{
 			ptr_func(arguments);
 			char_count++;
-			i +=2;
+			i += 2;
 		}
 
 		_putchar(format[i]);
